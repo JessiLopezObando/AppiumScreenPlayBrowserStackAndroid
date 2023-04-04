@@ -1,5 +1,12 @@
 #language: en
-  Feature: Login saucelabs app
+  Feature: buy saucelabs app
+
+    AS
+    user
+    I WANT TO
+    choose product
+    SO THAT
+    buy product
 
     Scenario: Login with valid credentials
       Given User wants to buy some clothes

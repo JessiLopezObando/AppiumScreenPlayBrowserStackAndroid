@@ -6,9 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/login.feature",
-        glue = "android.demoapk.stepdefinitions",
-        snippets = CucumberOptions.SnippetType.CAMELCASE
+        snippets = CucumberOptions.SnippetType.CAMELCASE,
+        features = {"src/test/resources/features"},
+        glue = {"android.demoapk.stepdefs"},
+        tags = "@Buy"
 )
-public class LoginRunner {
+public class BuyTest {
 }

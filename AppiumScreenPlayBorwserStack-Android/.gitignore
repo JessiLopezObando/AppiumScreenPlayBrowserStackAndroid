@@ -1,0 +1,21 @@
+# Java
+*.class
+*.jar
+
+# SerenityBDD
+target/
+
+# dotenv
+.env
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+build/
+
+
+
+

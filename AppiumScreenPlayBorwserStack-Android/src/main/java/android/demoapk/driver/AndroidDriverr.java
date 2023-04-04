@@ -24,7 +24,7 @@ public class AndroidDriverr {
             caps.setCapability("browserstack.user", browserstackUser);
             caps.setCapability("browserstack.key", browserstackKey);
 
-            caps.setCapability("app", "bs://89871fbd03d14b0c682030fa80111ca9304e17c2");
+            caps.setCapability("app", "bs://620a8fafb1f0177bdac41fb65385118ebd26fa8b");
 
             // Specify device and os_version for testing
             caps.setCapability("device", "Google Pixel 4");

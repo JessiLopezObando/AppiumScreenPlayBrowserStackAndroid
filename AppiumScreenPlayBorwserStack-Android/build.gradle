@@ -33,6 +33,7 @@ dependencies {
     implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '2.0.80'
     implementation group: 'io.appium', name: 'java-client', version: '7.5.1'
     implementation 'io.github.cdimascio:dotenv-java:2.3.2'
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
 
 
 }

@@ -15,12 +15,10 @@ public class SelecionaProductoTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.attemptsTo(
                 Click.on(MENU),
                 Click.on(ADD_PRODUCTO),
                 Click.on(CARRITO)
-
         );
     }
 

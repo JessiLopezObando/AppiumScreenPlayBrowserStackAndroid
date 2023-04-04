@@ -23,4 +23,7 @@ public class PaginaCheckout {
     public static final Target BUTTON_CONTINUE = Target
             .the("Botón continuar")
             .located(xpath("//android.view.ViewGroup[@content-desc=\"test-CONTINUE\"]"));
+    public static final Target BUTTON_FINALIZAR = Target
+            .the("Botón continuar")
+            .located(xpath("//android.view.ViewGroup[@content-desc=\"test-FINISH\"]"));
 }

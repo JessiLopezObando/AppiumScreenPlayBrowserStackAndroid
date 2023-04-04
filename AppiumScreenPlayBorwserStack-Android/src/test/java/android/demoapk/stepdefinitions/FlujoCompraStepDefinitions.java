@@ -59,12 +59,12 @@ public class FlujoCompraStepDefinitions {
     }
     @Then("se muestra el mensaje de orden finalizada")
     public void seMuestraElMensajeDeOrdenFinalizada() {
-//        try {
-//            actor.should(
-//                    seeThat(CheckoutCompleteMessage.isEqualTo(), containsString(String.valueOf("THANK YOU FOR YOU ORDER")))
-//            );
-//        }catch (Exception e){
-//            Assertions.fail(e.getMessage());
-//        }
+        try {
+            actor.should(
+                    seeThat(CheckoutCompleteMessage.isEqualTo(), containsString(String.valueOf("THANK YOU FOR YOU ORDER")))
+            );
+        }catch (Exception e){
+            Assertions.fail(e.getMessage());
+        }
     }
 }

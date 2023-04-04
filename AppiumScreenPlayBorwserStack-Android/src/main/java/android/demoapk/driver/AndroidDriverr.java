@@ -16,6 +16,7 @@ public class AndroidDriverr {
 
         String browserstackUser = dotenv.get("BROWSERSTACK_USER");
         String browserstackKey = dotenv.get("BROWSERSTACK_KEY");
+        String browserstackApp = dotenv.get("BROWSERSTACK_APP");
 
         try {
             DesiredCapabilities caps = new DesiredCapabilities();

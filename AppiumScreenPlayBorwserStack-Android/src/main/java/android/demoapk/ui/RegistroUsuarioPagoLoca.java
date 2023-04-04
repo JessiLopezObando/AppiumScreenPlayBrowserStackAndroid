@@ -4,23 +4,31 @@ import net.serenitybdd.screenplay.targets.Target;
 
 import static org.openqa.selenium.By.xpath;
 
-public class PaginaCheckout {
-    public static final Target BUTTON_CHECKOUT = Target
-            .the("Botón checkout")
-            .located(xpath("//android.view.ViewGroup[@content-desc=\"test-CHECKOUT\"]"));
-
-    public static final Target INPUT_NAME = Target
-            .the("Name usuario")
+public class RegistroUsuarioPagoLoca {
+    public static final Target NOMBRE_USUARIO_PAGO = Target
+            .the("Nombre usuario pago")
             .located(xpath("//android.widget.EditText[@content-desc=\"test-First Name\"]"));
 
-    public static final Target INPUT_LAST_NAME = Target
-            .the("Last Name usuario")
+    public static final Target APELLIDO_USUARIO_PAGO = Target
+            .the("Apellido usuario pago")
             .located(xpath("//android.widget.EditText[@content-desc=\"test-Last Name\"]"));
 
-    public static final Target INPUT_ZIP_CODE = Target
-            .the("Zip code")
+    public static final Target CODE_POSTAL = Target
+            .the("Codigo postal")
             .located(xpath("//android.widget.EditText[@content-desc=\"test-Zip/Postal Code\"]"));
+
     public static final Target BUTTON_CONTINUE = Target
             .the("Botón continuar")
-            .located(xpath("//android.view.ViewGroup[@content-desc=\"test-CONTINUE\"]"));
+            .located(xpath("//android.view.ViewGroup[@content-desc=\"test-CONTINUE\"]/android.widget.TextView"));
+
+    public static final Target BOTTON_TERMINAR = Target
+            .the("Botón PARA TERMINAR LA COMPRAr")
+            .located(xpath("//android.view.ViewGroup[@content-desc=\"test-FINISH\"]"));
+
+    ////android.view.ViewGroup[@content-desc="test-TERMINAR"]/android.widget.TextView
+
+    public static final Target MENSAJE_DE_LA_COMPRA = Target
+            .the("Mensaje esperado despues de realizar la compra")
+            .located(xpath("//android.widget.ScrollView[@content-desc=\"test-CHECKOUT: COMPLETE!\"]/android.view.ViewGroup/android.widget.TextView[1]"));
+
 }

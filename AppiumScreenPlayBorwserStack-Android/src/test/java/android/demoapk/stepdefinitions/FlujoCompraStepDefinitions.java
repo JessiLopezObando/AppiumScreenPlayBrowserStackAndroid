@@ -44,18 +44,18 @@ public class FlujoCompraStepDefinitions {
     }
     @When("ingreso al carrito a finalizar compra")
     public void todosLosDatosDeEnvioYPago() {
-//        try {
-//            actor.attemptsTo(
-//                    goToCart(),
-//                    goToPay(),
-//                    completeCheckoutInfo().withFirst("Juan")
-//                            .withLast("Velez")
-//                            .withZip("992"),
-//                    finishPurchase()
-//            );
-//        }catch (Exception e){
-//            Assertions.fail(e.getMessage());
-//        }
+        try {
+            actor.attemptsTo(
+                    goToCart(),
+                    goToPay(),
+                    completeCheckoutInfo().withFirst("Juan")
+                            .withLast("Velez")
+                            .withZip("992"),
+                    finishPurchase()
+            );
+        }catch (Exception e){
+            Assertions.fail(e.getMessage());
+        }
     }
     @Then("se muestra el mensaje de orden finalizada")
     public void seMuestraElMensajeDeOrdenFinalizada() {

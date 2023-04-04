@@ -12,17 +12,17 @@ public class AndroidDriverr {
 
     public static AndroidDriverr configureDriver() throws MalformedURLException {
 
-//        Dotenv dotenv = Dotenv.configure().load();
-//
-//        String browserstackUser = dotenv.get("BROWSERSTACK_USER");
-//        String browserstackKey = dotenv.get("BROWSERSTACK_KEY");
+        Dotenv dotenv = Dotenv.configure().load();
+
+        String browserstackUser = dotenv.get("BROWSERSTACK_USER");
+        String browserstackKey = dotenv.get("BROWSERSTACK_KEY");
 
         try {
             DesiredCapabilities caps = new DesiredCapabilities();
 
             // Set your access credentials
-            caps.setCapability("browserstack.user", "juandavidcardona_aOW1Qp");
-            caps.setCapability("browserstack.key", "Ls49hDwxosTCj4eKYEHL");
+            caps.setCapability("browserstack.user", browserstackUser);
+            caps.setCapability("browserstack.key", browserstackKey);
 
             caps.setCapability("app", "bs://1f3fb8aae2c2d0c86d784323c3a0da59c0ea1ec5");
 

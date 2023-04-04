@@ -1,7 +1,7 @@
 #language: en
-  Feature: Login saucelabs app
+  Feature: Iniciar sesion en la app saucelabs
 
-    Scenario: Login with valid credentials
-      Given User wants to buy some clothes
-      When User introduce the valid credentials standard_user secret_sauce
-      Then User should see the Products list
+    Scenario: Iniciar sesion exitosa
+      Given El usuario quiere comprar vestuarios
+      When El usuario introduce las credenciales standard_user secret_sauce
+      Then El usuario debe ver la lista de productos

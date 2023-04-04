@@ -14,7 +14,7 @@ public class Pay implements Task {
     public <T extends Actor> void performAs(T actor) {
         driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true))"
-                        + ".scrollIntoView(new UiSelector().description(\"test-FINISH\"))"));
+                        + ".scrollIntoView(new UiSelector().text(\"FINISH\"))"));
         actor.attemptsTo(
                 Click.on(FINISH_BTTN)
         );

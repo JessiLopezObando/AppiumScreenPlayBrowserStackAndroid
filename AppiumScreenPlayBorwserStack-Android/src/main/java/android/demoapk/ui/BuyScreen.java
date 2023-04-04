@@ -10,4 +10,10 @@ public class BuyScreen {
 
     public static final Target CART = Target.the("Cart button")
             .located(xpath("//android.view.ViewGroup[@content-desc='test-Cart']"));
+
+    public static final Target MENU = Target.the("Menu")
+            .located(xpath("//android.view.ViewGroup[@content-desc='test-Menu']/android.view.ViewGroup/android.widget.ImageView"));
+
+    public static final Target LOGOUT = Target.the("Logout button")
+            .located(xpath("//android.view.ViewGroup[@content-desc='test-LOGOUT']"));
 }

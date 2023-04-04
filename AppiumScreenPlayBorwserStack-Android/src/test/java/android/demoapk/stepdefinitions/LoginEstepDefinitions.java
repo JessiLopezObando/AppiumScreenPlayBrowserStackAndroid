@@ -30,7 +30,7 @@ public class LoginEstepDefinitions {
             actor.attemptsTo(
                     iniciarSesionTask ()
                             .conUser("standard_user")
-                            .yPass("secret_user")
+                            .yPass("secret_sauce")
             );
 
 
@@ -42,8 +42,12 @@ public class LoginEstepDefinitions {
         }
     }
 
-    @Then("User should see the Products list")
-    public void userShouldSeeTheProductsList() {
+    @When("User selects the product")
+    public void userSelectsTheProduct() {
+
+    }
+    @Then("User should see payment information")
+    public void userShouldSeePaymentInformation() {
 
     }
 }

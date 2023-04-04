@@ -83,7 +83,7 @@ public class LoginEstepDefinitions {
             LOGGER.info("Proceso de compra finalizado");
 
         } catch (Exception e) {
-            LOGGER.info(" Fallo al seleccionar producto");
+            LOGGER.info(" Fallo al realizar proceso de compra");
             LOGGER.warning(e.getMessage());
             Assertions.fail(e.getMessage());
 

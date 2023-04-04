@@ -32,6 +32,7 @@ public class RegistrarCompra implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
+
         actor.attemptsTo(
                 Click.on(BUTTON_CHECKOUT),
                 Enter.theValue(name).into(INPUT_NAME),

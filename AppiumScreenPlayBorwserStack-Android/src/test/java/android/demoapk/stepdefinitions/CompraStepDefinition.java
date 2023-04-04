@@ -9,11 +9,14 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.apache.log4j.Logger;
 import org.assertj.core.api.Assertions;
 
+import static android.demoapk.questions.MensajeCompra.mensajeCompra;
 import static android.demoapk.tasks.IniciarSesion.iniciarSesion;
 import static android.demoapk.tasks.ElegirProducto.elegirProducto;
 import static android.demoapk.tasks.DiligenciarInfoCompra.diligenciarInfoCompra;
-import static android.demoapk.util.Constants.PASSWORD;
-import static android.demoapk.util.Constants.USER;
+import static android.demoapk.tasks.FinalizarCompra.finalizarCompra;
+import static android.demoapk.util.Constants.*;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class CompraStepDefinition extends Configuracion {
 
@@ -42,10 +45,11 @@ public class CompraStepDefinition extends Configuracion {
         try {
             actor.attemptsTo(
                     elegirProducto(),
-                    diligenciarInfoCompra()
+                    diligenciarInfoCompra(),
+                    finalizarCompra()
             );
         } catch (Exception e){
-            LOGGER.info("Fallo iniciando sesion");
+            LOGGER.info("Fallo durante proceso compra");
             LOGGER.warn(e.getMessage());
             Assertions.fail(e.getMessage());
         }
@@ -53,7 +57,16 @@ public class CompraStepDefinition extends Configuracion {
 
     @Then("debe visualizar un mensaje con informacion de la compra")
     public void debeVisualizarUnMensajeConInformacionDeLaCompra() {
-
+        try {
+            actor.should(
+                    seeThat(mensajeCompra(), equalTo(MENSAJE_ORDEN_COMPLETA))
+            );
+            LOGGER.info("CUMPLE");
+        } catch (Exception e){
+            LOGGER.info("fallo en la comparacion de resultados");
+            LOGGER.warn(e.getMessage());
+            Assertions.fail(e.getMessage());
+        }
     }
 
 

@@ -11,7 +11,7 @@ import static com.google.common.base.StandardSystemProperty.USER_DIR;
 public class Configuracion {
 
 
-    protected static void setUplog4j() {
+    protected void setUplog4j() {
         PropertyConfigurator.configure(USER_DIR.value() + LOG4J_PROPERTIES_FILE_PATH.getValue());
 
     }

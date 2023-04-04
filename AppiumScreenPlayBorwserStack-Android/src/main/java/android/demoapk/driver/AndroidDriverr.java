@@ -27,7 +27,7 @@ public class AndroidDriverr {
             caps.setCapability("app", "bs://620a8fafb1f0177bdac41fb65385118ebd26fa8b");
 
             // Specify device and os_version for testing
-            caps.setCapability("device", "Google Pixel 4");
+            caps.setCapability("device", "Samsung Galaxy S20");
             caps.setCapability("os_version", "10");
 
             // Set other BrowserStack capabilities

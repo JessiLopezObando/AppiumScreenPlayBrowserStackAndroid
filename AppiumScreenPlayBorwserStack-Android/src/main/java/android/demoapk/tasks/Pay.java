@@ -1,19 +1,21 @@
 package android.demoapk.tasks;
 
+import io.appium.java_client.MobileBy;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.actions.ScrollToTarget;
 
+import static android.demoapk.driver.AndroidDriver.driver;
 import static android.demoapk.ui.CheckoutOverviewScreen.FINISH_BTTN;
 
 public class Pay implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))"
+                        + ".scrollIntoView(new UiSelector().description(\"test-FINISH\"))"));
         actor.attemptsTo(
-                Scroll.to(FINISH_BTTN),
                 Click.on(FINISH_BTTN)
         );
     }

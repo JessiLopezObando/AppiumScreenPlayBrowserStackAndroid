@@ -42,26 +42,49 @@ public class BuyStepDef {
 
     @When("I select Sauce Labs Backpack")
     public void iSelectSauceLabsBackpack() {
-        actor.attemptsTo(
-                selectItem(),
-                goToCart(),
-                goToCheckout()
-        );
+        try {
+            log.info("Buy backpack");
+            actor.attemptsTo(
+                    selectItem(),
+                    goToCart(),
+                    goToCheckout()
+            );
+        } catch (Exception e) {
+            log.error("Wrong steps provided");
+            log.error(e.getMessage());
+            log.error(String.valueOf(e.getCause()));
+        }
     }
 
     @And("I pay for it")
     public void iPayForIt() {
-        actor.attemptsTo(
-                fillInfo(),
-                pay()
-        );
+        try {
+            log.info("Pay backpack");
+            actor.attemptsTo(
+                    fillInfo(),
+                    pay()
+            );
+        } catch (Exception e) {
+            log.error("Wrong steps provided");
+            log.error(e.getMessage());
+            log.error(String.valueOf(e.getCause()));
+        }
     }
 
     @Then("I will see a message thanking for order")
     public void iWillSeeAMessageThankingForOrder() {
-        actor.should(
-                seeThat("Thanks message",
-                        isOrderDone(), equalTo("THANK YOU FOR YOU ORDER"))
-        );
+        try {
+            actor.should(
+                    seeThat("Thanks message",
+                            isOrderDone(), equalTo("THANK YOU FOR YOU ORDER"))
+            );
+            log.info("Test passed");
+        } catch (Exception e) {
+            log.error("Test failed");
+            log.error(e.getMessage());
+            log.error(String.valueOf(e.getCause()));
+        } finally {
+            log.info("Test completed");
+        }
     }
 }

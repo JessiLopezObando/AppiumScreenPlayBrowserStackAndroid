@@ -26,6 +26,7 @@ public class AndroidDriver {
             caps.setCapability("project", "AndroidDemo");
             caps.setCapability("build", "Android SauceLab build");
             caps.setCapability("name", "Buy test Android");
+            caps.setCapability("nativeWebScreenshot", false);
 
             driver = new io.appium.java_client.android.AndroidDriver<AndroidElement>(new URL("http://hub-cloud.browserstack.com/wd/hub"), caps);
 

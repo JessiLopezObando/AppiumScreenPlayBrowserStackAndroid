@@ -9,7 +9,7 @@ Desargar y ejeuctar el sample de BrowserStack Appium with Java para Android imag
 
 1.Clonar este repositorio.
 
-2.Descargar APK.
+2.Descargar APK. https://github.com/saucelabs/sample-app-mobile/releases
 
 3.Subirlo en el browserStack para obtener el bs.
 

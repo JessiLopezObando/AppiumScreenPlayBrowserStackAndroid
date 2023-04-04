@@ -12,6 +12,8 @@ import java.net.MalformedURLException;
 import java.util.logging.Logger;
 
 import static android.demoapk.task.IniciarSesionTask.iniciarSesionTask;
+import static android.demoapk.task.RegistrarCompra.registrarCompra;
+import static android.demoapk.task.SelecionaProductoTask.selecionaProductoTask;
 
 public class LoginEstepDefinitions {
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(LoginEstepDefinitions.class));
@@ -44,7 +46,28 @@ public class LoginEstepDefinitions {
 
     @When("User selects the product")
     public void userSelectsTheProduct() {
+        try {
 
+            actor.attemptsTo(
+                    selecionaProductoTask()
+
+            );
+            LOGGER.info("Productos seleccionados con éxito");
+            actor.attemptsTo(
+                    registrarCompra()
+                            .conName("Yoli")
+                            .conLastName("Guadir")
+                            .yZipCode("2389")
+            );
+            LOGGER.info("Registro de compra con éxito");
+
+
+        } catch (Exception e) {
+            LOGGER.info(" Fallo al seleccionar producto");
+            LOGGER.warning(e.getMessage());
+            Assertions.fail(e.getMessage());
+
+        }
     }
     @Then("User should see payment information")
     public void userShouldSeePaymentInformation() {

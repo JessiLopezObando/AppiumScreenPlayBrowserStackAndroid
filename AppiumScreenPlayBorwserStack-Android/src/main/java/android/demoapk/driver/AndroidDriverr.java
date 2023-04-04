@@ -24,11 +24,11 @@ public class AndroidDriverr {
             caps.setCapability("browserstack.user", browserstackUser);
             caps.setCapability("browserstack.key", browserstackKey);
 
-            caps.setCapability("app", "bs://89871fbd03d14b0c682030fa80111ca9304e17c2");
+            caps.setCapability("app", "bs://1f3fb8aae2c2d0c86d784323c3a0da59c0ea1ec5");
 
             // Specify device and os_version for testing
-            caps.setCapability("device", "Google Pixel 4");
-            caps.setCapability("os_version", "10");
+            caps.setCapability("device", "Xiaomi Redmi Note 8");
+            caps.setCapability("os_version", "9");
 
             // Set other BrowserStack capabilities
             caps.setCapability("project", "AndroidDemo");

@@ -1,7 +1,9 @@
-#language: en
-  Feature: Login saucelabs app
+Feature: Inicio de sesion en swaglabs
+  Yo como usuario de la app swaglabs
+  Quiero iniciar sesion
+  para quedar logueado en la app
 
-    Scenario: Login with valid credentials
-      Given User wants to buy some clothes
-      When User introduce the valid credentials standard_user secret_sauce
-      Then User should see the Products list
+  Scenario: inicio de sesion exitoso
+    Given que accedemos a la aplicacion swaglabs
+    When Ingresamos los datos de usuario y contraseña
+    Then obtemos un mensaje de inicio de sesion exitoso

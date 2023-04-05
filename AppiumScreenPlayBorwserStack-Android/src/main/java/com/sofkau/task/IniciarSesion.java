@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static com.sofkau.ui.LoginOverview.*;
 
 public class IniciarSesion implements Task {
+
     private String username;
     private String password;
     public IniciarSesion credenciales(String username, String password){

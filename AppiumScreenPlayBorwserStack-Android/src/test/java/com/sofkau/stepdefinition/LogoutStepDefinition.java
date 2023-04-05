@@ -29,12 +29,11 @@ public class LogoutStepDefinition extends AndroidDriver {
             quitarDriver();
         }
     }
-
     @When("inicio sesion en la aplicacion")
     public void inicioSesionEnLaAplicacion() {
         try {
             ACTOR.attemptsTo(
-                    iniciarSesion().credenciales("standard_user", "secret_sauce")
+                    iniciarSesion().credenciales(System.getenv("MY_APP_USERNAME"), System.getenv("MY_APP_PASSWORD"))
             );
             LOGGER.info("Se inicia sesion");
         } catch (Exception e) {

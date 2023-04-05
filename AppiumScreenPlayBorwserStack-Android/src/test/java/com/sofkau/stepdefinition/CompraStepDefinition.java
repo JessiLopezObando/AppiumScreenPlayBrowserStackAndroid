@@ -1,7 +1,6 @@
 package com.sofkau.stepdefinition;
 
 import com.sofkau.setup.AndroidDriver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -35,7 +34,7 @@ public class CompraStepDefinition extends AndroidDriver {
     public void inicioSesionEnLaAppConCredencialesValidas() {
         try {
             ACTOR.attemptsTo(
-                    iniciarSesion().credenciales("standard_user","secret_sauce")
+                    iniciarSesion().credenciales(System.getenv("MY_APP_USERNAME"), System.getenv("MY_APP_PASSWORD"))
             );
             LOGGER.info("Se inicia sesion");
         }catch (Exception e){
@@ -51,7 +50,7 @@ public class CompraStepDefinition extends AndroidDriver {
         try {
             ACTOR.attemptsTo(
                     escogerProductos(),
-                    datosDeCompra("james", "munoz", "050"),
+                    datosDeCompra("nombre", "apellido", "postal"),
                     realizarCompra().conElDriver(driver)
             );
             LOGGER.info("Se realiza una compra");

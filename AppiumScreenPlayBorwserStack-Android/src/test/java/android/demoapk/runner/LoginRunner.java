@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/LogOut.feature",
+        features = "src/test/resources/features/loginIncorrecto.feature",
         glue = "android.demoapk.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )

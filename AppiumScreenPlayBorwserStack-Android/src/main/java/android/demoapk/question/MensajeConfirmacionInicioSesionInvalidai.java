@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import static org.openqa.selenium.By.xpath;
 
 
-public class MensajeConfirmacionInicioSesionInvalida {
+public class MensajeConfirmacionInicioSesionInvalidai {
 
     public static final Target MENSAJE_CIERRE_SESION = Target
             .the("Mensaje esperado despues de realizar la compra")
@@ -17,7 +17,7 @@ public class MensajeConfirmacionInicioSesionInvalida {
     public static Question<String> isEqualTo(){
     return TheTarget.textOf(MENSAJE_CIERRE_SESION);
 }
-    private MensajeConfirmacionInicioSesionInvalida() {
+    private MensajeConfirmacionInicioSesionInvalidai() {
     }
 
 

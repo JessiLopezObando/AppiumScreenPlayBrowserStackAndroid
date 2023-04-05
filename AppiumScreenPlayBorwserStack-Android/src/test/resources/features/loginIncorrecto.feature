@@ -1,11 +1,14 @@
 #language: en
-  Feature: Iniciar sesion en la app saucelabs
-    Yo como usuario de la app saucelabs
-    Quiero ver los diferentes diseños de ropa
-    Para comprar vestuario de mi interes
+Feature: Iniciar sesion sin exito
+  Yo como usuario de la app saucelabs
+  Quiero ingresar las credenciales incorrecto
+  Para confirmar si me valida las credenciales
 
 
-    Scenario: Iniciar sesion exitosa
-      Given El usuario quiere comprar vestuarios
-      When El usuario introduce las credenciales standard_user secret_sauce
-      Then El usuario debe ver un mensaje compra exitosa
+  Scenario Outline:Iniciar sesion sin exito
+    Given el usuario se encuentra en la pagina de incio
+    When el usuario introduce las credenciales invalida usuario <usuario> contrasenia <contrasenia>
+    Then el usuario debe ver un mensaje compra exitosa
+    Examples:
+      | usuario         | contrasenia    |
+      | "standard_user" | "secret_sauce5566" |

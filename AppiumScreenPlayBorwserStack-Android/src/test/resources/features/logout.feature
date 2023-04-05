@@ -1,12 +1,12 @@
 #language: en
-Feature: login and logout in saucelabs app
+Feature: login y logout en saucelabs app
 
   AS
-  user
+  usuario
   I WANT TO
-  logout in saucelabs app
+  logout con exito saucelabs app
   SO THAT
-  see login
+  volver a la página de login
 
   Scenario: Logout
     Given El usuario esta en la pagina de inicio

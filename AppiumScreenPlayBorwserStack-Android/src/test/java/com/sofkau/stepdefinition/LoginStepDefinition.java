@@ -47,8 +47,8 @@ public class LoginStepDefinition extends AndroidDriver {
         }
     }
 
-    @Then("obtemos un mensaje de inicio de sesion exitoso")
-    public void obtemosUnMensajeDeInicioDeSesionExitoso() {
+    @Then("observamos que el inicio de sesion se realiza correctamente")
+    public void observamosQueElInicioDeSesionSeRealizaCorrectamente() {
         try {
             ACTOR.should(
                     seeThat(mensajeInicio(), containsString("PRODUCTS"))

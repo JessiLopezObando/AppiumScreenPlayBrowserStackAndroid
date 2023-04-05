@@ -42,7 +42,7 @@ public class CompraStepDefinition extends AndroidDriver {
             );
             LOGGER.info("Se inicia sesion");
         }catch (Exception e){
-            LOGGER.info("Fallo el entrar en la opcion");
+            LOGGER.info("Fallo al iniciar la sesion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
 

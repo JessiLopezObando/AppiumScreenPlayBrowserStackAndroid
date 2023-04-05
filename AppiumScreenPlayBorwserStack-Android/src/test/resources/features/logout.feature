@@ -7,4 +7,4 @@ Feature: Logout de sesion en swaglabs
     Given que ingresamos a la aplicacion swaglabs
     When iniciamos sesion en la aplicacion
     And realizamos el cierre de sesion
-    Then volvemos al menu de inicio de sesion
+    Then debemos volver al menu de inicio de sesion

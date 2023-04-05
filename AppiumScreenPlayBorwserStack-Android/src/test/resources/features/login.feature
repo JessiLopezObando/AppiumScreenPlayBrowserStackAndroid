@@ -6,4 +6,4 @@ Feature: Inicio de sesion en swaglabs
   Scenario: inicio de sesion exitoso
     Given que accedemos a la aplicacion swaglabs
     When Ingresamos los datos de usuario y contraseña
-    Then obtemos un mensaje de inicio de sesion exitoso
+    Then observamos que el inicio de sesion se realiza correctamente

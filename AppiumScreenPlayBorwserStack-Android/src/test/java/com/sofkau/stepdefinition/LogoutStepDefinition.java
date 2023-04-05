@@ -1,7 +1,6 @@
 package com.sofkau.stepdefinition;
 
 import com.sofkau.AndroidDriver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,8 +8,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
-
+import static com.sofkau.question.MensajeLogout.mensajeLogout;
+import static com.sofkau.task.CierreSesion.cierreSesion;
 import static com.sofkau.task.IniciarSesion.iniciarSesion;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.containsString;
 
 public class LogoutStepDefinition extends AndroidDriver {
 
@@ -38,7 +40,7 @@ public class LogoutStepDefinition extends AndroidDriver {
             );
             LOGGER.info("Se inicia sesion");
         }catch (Exception e){
-            LOGGER.info("Fallo el entrar en la opcion");
+            LOGGER.info("Fallo al iniciar la sesion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
 
@@ -47,9 +49,31 @@ public class LogoutStepDefinition extends AndroidDriver {
 
     @When("realizamos el cierre de sesion")
     public void realizamosElCierreDeSesion() {
+        try {
+            ACTOR.attemptsTo(
+                    cierreSesion()
+            );
+            LOGGER.info("Se realiza el cierre de sesion");
+        } catch (Exception e) {
+            LOGGER.info("Fallo el cierre de sesion");
+            LOGGER.warn(e.getMessage());
+            Assertions.fail();
+
+        }
     }
 
-    @Then("volvemos al menu de inicio de sesion")
-    public void volvemosAlMenuDeInicioDeSesion() {
+    @Then("debemos volver al menu de inicio de sesion")
+    public void debemosVolverAlMenuDeInicioDeSesion() {
+        try {
+            ACTOR.should(
+                    seeThat(mensajeLogout(), containsString("LOGIN"))
+            );
+            LOGGER.info("Hace la comparacion");
+        } catch (Exception e) {
+            LOGGER.info("Fallo la comparacion");
+            LOGGER.warn(e.getMessage());
+            Assertions.fail();
+        }
     }
 }
+

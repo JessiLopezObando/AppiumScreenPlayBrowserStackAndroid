@@ -25,10 +25,4 @@ public class RegistroUsuarioPagoLoca {
             .the("Botón PARA TERMINAR LA COMPRAr")
             .located(xpath("//android.view.ViewGroup[@content-desc=\"test-FINISH\"]"));
 
-    ////android.view.ViewGroup[@content-desc="test-TERMINAR"]/android.widget.TextView
-
-    public static final Target MENSAJE_DE_LA_COMPRA = Target
-            .the("Mensaje esperado despues de realizar la compra")
-            .located(xpath("//android.widget.ScrollView[@content-desc=\"test-CHECKOUT: COMPLETE!\"]/android.view.ViewGroup/android.widget.TextView[1]"));
-
 }

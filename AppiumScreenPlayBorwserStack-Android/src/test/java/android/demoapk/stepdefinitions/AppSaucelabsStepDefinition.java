@@ -73,8 +73,8 @@ public class AppSaucelabsStepDefinition {
 
     }
 
-    @Then("El usuario debe ver la lista de productos")
-    public void elUsuarioDebeVerLaListaDeProductos() {
+    @Then("El usuario debe ver un mensaje compra exitosa")
+    public void el_usuario_debe_ver_un_mensaje_compra_exitosa() {
         try {
             actor.should(
                     seeThat(MensajeConfirmacionCompra.isEqualTo(), containsString(String.format("THANK YOU FOR YOU ORDER"))));

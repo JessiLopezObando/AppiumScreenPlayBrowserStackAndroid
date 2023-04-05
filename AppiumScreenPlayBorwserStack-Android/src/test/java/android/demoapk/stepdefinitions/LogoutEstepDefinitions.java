@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 import static android.demoapk.task.FinalizarCompraTask.finalizarCompraTask;
 import static android.demoapk.task.IniciarSesionTask.iniciarSesionTask;
+import static android.demoapk.task.Logout.logout;
 import static android.demoapk.task.RegistrarCompra.registrarCompra;
 import static android.demoapk.task.SelecionaProductoTask.selecionaProductoTask;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -25,17 +26,14 @@ public class LogoutEstepDefinitions {
     @Given("El usuario esta en la pagina de inicio")
     public void elUsuarioEstaEnLaPaginaDeInicio() {
         try {
-
             actor.can(BrowseTheWeb.
                     with(AndroidDriverr.configureDriver().start()));
             LOGGER.info("Inicio de automatización con exito");
-
 
         } catch (Exception e) {
             LOGGER.info(" Fallo al abrir app");
             LOGGER.warning(e.getMessage());
             Assertions.fail(e.getMessage());
-
         }
     }
     @Given("envia datos para  iniciar sesion {string} y {string}")
@@ -53,15 +51,38 @@ public class LogoutEstepDefinitions {
             LOGGER.info(" Fallo al ingresar user y pass");
             LOGGER.warning(e.getMessage());
             Assertions.fail(e.getMessage());
-
         }
     }
     @When("Usuario cierra sesion")
     public void usuarioCierraSesion() {
+        try {
+            actor.attemptsTo(
+                    logout()
+            );
+
+        } catch (Exception e) {
+            LOGGER.info(" Fallo al hacer logout");
+            LOGGER.warning(e.getMessage());
+            Assertions.fail(e.getMessage());
+
+        }
 
     }
     @Then("Usuario vuelve al inicio sesion")
     public void usuarioVuelveAlInicioSesion() {
+        try {
+            actor.should(
+                    seeThat(Msj_Compra.isEqualTo(), containsString(String.format("test-LOGIN")))
+            );
+
+            LOGGER.info("Prueba realizada con exito ");
+
+        } catch (Exception e) {
+            LOGGER.info("Assertions fallida");
+            LOGGER.warning(e.getMessage());
+            Assertions.fail(e.getMessage());
+
+        }
 
     }
 

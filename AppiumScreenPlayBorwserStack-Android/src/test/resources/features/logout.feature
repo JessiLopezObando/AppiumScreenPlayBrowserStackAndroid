@@ -1,12 +1,12 @@
 #language: en
-Feature: buy saucelabs app
+Feature: login and logout in saucelabs app
 
   AS
   user
   I WANT TO
-  choose product
+  logout in saucelabs app
   SO THAT
-  buy product
+  see login
 
   Scenario: Logout
     Given El usuario esta en la pagina de inicio

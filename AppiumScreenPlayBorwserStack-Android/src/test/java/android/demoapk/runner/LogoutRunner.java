@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/login.feature",
+        features = "src/test/resources/features/logout.feature",
         glue = "android.demoapk.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class LoginRunner {
+public class LogoutRunner {
 }

@@ -11,8 +11,7 @@ public class CierreSesion implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(MENU),
-                Click.on(LOGOUT),
-                Click.on(ASERCION_LOGIN)
+                Click.on(LOGOUT)
         );
     }
     public static CierreSesion cierreSesion () {

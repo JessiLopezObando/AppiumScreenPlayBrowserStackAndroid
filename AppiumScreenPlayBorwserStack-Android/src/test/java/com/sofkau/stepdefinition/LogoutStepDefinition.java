@@ -1,11 +1,9 @@
 package com.sofkau.stepdefinition;
 
-import com.sofkau.AndroidDriver;
+import com.sofkau.setup.AndroidDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import static com.sofkau.question.MensajeLogout.mensajeLogout;
@@ -15,20 +13,18 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.containsString;
 
 public class LogoutStepDefinition extends AndroidDriver {
-
     private static Logger LOGGER = Logger.getLogger(LogoutStepDefinition.class);
-
-    Actor ACTOR = Actor.named("James");
 
     @Given("que ingresamos a la aplicacion swaglabs")
     public void queIngresamosALaAplicacionSwaglabs() {
         try {
-            ACTOR.can(BrowseTheWeb.with(AndroidDriver.configureDriver().start()));
+            configurarCelular();
             LOGGER.info("Inicia la automatizacion");
         } catch (Exception e) {
             LOGGER.info("Fallo la configuracion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
+            quitarDriver();
         }
     }
 
@@ -43,7 +39,7 @@ public class LogoutStepDefinition extends AndroidDriver {
             LOGGER.info("Fallo al iniciar la sesion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
-
+            quitarDriver();
         }
     }
 
@@ -58,6 +54,7 @@ public class LogoutStepDefinition extends AndroidDriver {
             LOGGER.info("Fallo el cierre de sesion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
+            quitarDriver();
 
         }
     }
@@ -73,6 +70,7 @@ public class LogoutStepDefinition extends AndroidDriver {
             LOGGER.info("Fallo la comparacion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
+            quitarDriver();
         }
     }
 }

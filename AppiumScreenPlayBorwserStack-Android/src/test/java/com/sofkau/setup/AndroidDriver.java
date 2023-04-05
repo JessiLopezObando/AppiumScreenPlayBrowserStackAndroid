@@ -1,11 +1,17 @@
-package com.sofkau;
+package com.sofkau.setup;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.actors.OnlineCast;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidElement;
-
 import java.net.MalformedURLException;
 import java.net.URL;
+import static com.google.common.base.StandardSystemProperty.USER_DIR;
+import static com.sofkau.util.Log4j.LOG4J_PROPERTIES_FILE_PATH;
 
 public class AndroidDriver {
     public static io.appium.java_client.android.AndroidDriver<AndroidElement> driver;
@@ -42,7 +48,22 @@ public class AndroidDriver {
         }
         return new AndroidDriver();
     }
+    protected static final Actor ACTOR = Actor.named("James");
 
+    protected void quitarDriver() {
+        driver.quit();
+    }
+    private void setupUser() throws MalformedURLException {
+        OnStage.setTheStage(new OnlineCast());
+        ACTOR.can(BrowseTheWeb.with(configureDriver().start()));
+    }
+    protected void configurarCelular() throws MalformedURLException {
+        setupUser();
+        setUplog4j();
+    }
+    private void setUplog4j() {
+        PropertyConfigurator.configure(USER_DIR.value() + LOG4J_PROPERTIES_FILE_PATH.getValue());
+    }
     public io.appium.java_client.android.AndroidDriver<AndroidElement> start(){
         return driver;
     }

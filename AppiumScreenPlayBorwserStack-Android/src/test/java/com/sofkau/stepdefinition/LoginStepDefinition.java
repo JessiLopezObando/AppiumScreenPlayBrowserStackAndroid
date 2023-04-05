@@ -1,12 +1,9 @@
 package com.sofkau.stepdefinition;
 
-import com.sofkau.AndroidDriver;
-import io.cucumber.java.en.And;
+import com.sofkau.setup.AndroidDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import static com.sofkau.question.MensajeInicio.mensajeInicio;
@@ -18,17 +15,16 @@ public class LoginStepDefinition extends AndroidDriver {
 
     private static Logger LOGGER = Logger.getLogger(LoginStepDefinition.class);
 
-    Actor ACTOR = Actor.named("James");
-
     @Given("que accedemos a la aplicacion swaglabs")
     public void queAccedemosALaAplicacionSwaglabs() {
         try {
-            ACTOR.can(BrowseTheWeb.with(AndroidDriver.configureDriver().start()));
+            configurarCelular();
             LOGGER.info("Inicia la automatizacion");
         } catch (Exception e) {
             LOGGER.info("Fallo la configuracion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
+            quitarDriver();
         }
     }
 
@@ -43,7 +39,7 @@ public class LoginStepDefinition extends AndroidDriver {
             LOGGER.info("Fallo el entrar en la opcion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
-
+            quitarDriver();
         }
     }
 
@@ -58,8 +54,7 @@ public class LoginStepDefinition extends AndroidDriver {
             LOGGER.info("Fallo la comparacion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
-        } finally {
-
+            quitarDriver();
         }
     }
 }

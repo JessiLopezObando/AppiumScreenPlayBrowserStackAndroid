@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.questions.ValueOf;
 import org.assertj.core.api.Assertions;
 
 import java.net.MalformedURLException;
@@ -40,13 +41,11 @@ public class LogoutEstepDefinitions {
     @Given("envia datos para  iniciar sesion {string} y {string}")
     public void enviaDatosParaIniciarSesionY(String user, String pass) {
         try {
-
             actor.attemptsTo(
                     iniciarSesionTask ()
                             .conUser(user)
                             .yPass(pass)
             );
-
 
         } catch (Exception e) {
             LOGGER.info(" Fallo al ingresar user y pass");

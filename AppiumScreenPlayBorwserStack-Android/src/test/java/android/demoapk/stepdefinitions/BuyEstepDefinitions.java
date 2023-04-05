@@ -19,8 +19,8 @@ import static android.demoapk.task.SelecionaProductoTask.selecionaProductoTask;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.containsString;
 
-public class LoginEstepDefinitions {
-    private static final Logger LOGGER = Logger.getLogger(String.valueOf(LoginEstepDefinitions.class));
+public class BuyEstepDefinitions {
+    private static final Logger LOGGER = Logger.getLogger(String.valueOf(BuyEstepDefinitions.class));
     protected Actor actor = Actor.named("Yoli");
     @Given("User wants to buy some clothes")
     public void userWantsToBuySomeClothes() throws MalformedURLException {

@@ -10,5 +10,5 @@ import org.junit.runner.RunWith;
         glue = "android.demoapk.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class LoginRunner {
+public class BuyRunner {
 }

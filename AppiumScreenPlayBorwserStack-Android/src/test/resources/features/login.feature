@@ -4,6 +4,6 @@ Feature: Inicio de sesion en swaglabs
   para quedar logueado en la app
 
   Scenario: inicio de sesion exitoso
-    Given que accedemos a la aplicacion swaglabs
-    When Ingresamos los datos de usuario y contraseña
-    Then observamos que el inicio de sesion se realiza correctamente
+    Given que accedo a la aplicacion swaglabs
+    When Ingreso los datos de usuario y contraseña
+    Then el inicio de sesion se deberia realizar correctamente

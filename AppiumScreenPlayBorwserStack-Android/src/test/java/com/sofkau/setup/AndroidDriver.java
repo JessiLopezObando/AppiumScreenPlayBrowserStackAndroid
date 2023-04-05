@@ -30,7 +30,7 @@ public class AndroidDriver {
             caps.setCapability("browserstack.user", browserstackUser);
             caps.setCapability("browserstack.key", browserstackKey);
 
-            caps.setCapability("app", "bs://2300097c63d6c01ca17f31a0a2fa9998e0f315dd");
+            caps.setCapability("app", "bs://9b37bc845f9e2c7b4219580dec6dbedc8aadf0c8");
 
             // Specify device and os_version for testing
             caps.setCapability("device", "Samsung Galaxy Note 20 Ultra");

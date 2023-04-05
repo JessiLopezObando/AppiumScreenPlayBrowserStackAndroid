@@ -1,6 +1,7 @@
 package com.sofkau.stepdefinition;
 
 import com.sofkau.setup.AndroidDriver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,8 +18,8 @@ import static org.hamcrest.Matchers.containsString;
 public class CompraStepDefinition extends AndroidDriver {
     private static Logger LOGGER = Logger.getLogger(CompraStepDefinition.class);
 
-    @Given("que iniciamos a la aplicacion swaglabs")
-    public void queIniciamosALaAplicacionSwaglabs() {
+    @Given("que inicio en la aplicacion swaglabs")
+    public void queInicioEnLaAplicacionSwaglabs() {
         try {
             configurarCelular();
             LOGGER.info("Inicia la automatizacion");
@@ -30,8 +31,8 @@ public class CompraStepDefinition extends AndroidDriver {
         }
     }
 
-    @When("iniciamos sesion en la app con credenciales validas")
-    public void iniciamosSesionEnLaAppConCredencialesValidas() {
+    @When("inicio sesion en la app con credenciales validas")
+    public void inicioSesionEnLaAppConCredencialesValidas() {
         try {
             ACTOR.attemptsTo(
                     iniciarSesion().credenciales("standard_user","secret_sauce")
@@ -45,8 +46,8 @@ public class CompraStepDefinition extends AndroidDriver {
         }
     }
 
-    @When("agrego un producto al carro y realizo la compra")
-    public void agregoUnProductoAlCarroYRealizoLaCompra() {
+    @When("agrego un producto al carrito y realizo la compra")
+    public void agregoUnProductoAlCarritoYRealizoLaCompra() {
         try {
             ACTOR.attemptsTo(
                     escogerProductos(),

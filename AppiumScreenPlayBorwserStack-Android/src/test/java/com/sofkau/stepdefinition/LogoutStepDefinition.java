@@ -1,11 +1,13 @@
 package com.sofkau.stepdefinition;
 
 import com.sofkau.setup.AndroidDriver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
+
 import static com.sofkau.question.MensajeLogout.mensajeLogout;
 import static com.sofkau.task.CierreSesion.cierreSesion;
 import static com.sofkau.task.IniciarSesion.iniciarSesion;
@@ -15,8 +17,8 @@ import static org.hamcrest.Matchers.containsString;
 public class LogoutStepDefinition extends AndroidDriver {
     private static Logger LOGGER = Logger.getLogger(LogoutStepDefinition.class);
 
-    @Given("que ingresamos a la aplicacion swaglabs")
-    public void queIngresamosALaAplicacionSwaglabs() {
+    @Given("que ingreso a la aplicacion swaglabs")
+    public void queIngresoALaAplicacionSwaglabs() {
         try {
             configurarCelular();
             LOGGER.info("Inicia la automatizacion");
@@ -28,14 +30,14 @@ public class LogoutStepDefinition extends AndroidDriver {
         }
     }
 
-    @When("iniciamos sesion en la aplicacion")
-    public void iniciamosSesionEnLaAplicacion() {
+    @When("inicio sesion en la aplicacion")
+    public void inicioSesionEnLaAplicacion() {
         try {
             ACTOR.attemptsTo(
-                    iniciarSesion().credenciales("standard_user","secret_sauce")
+                    iniciarSesion().credenciales("standard_user", "secret_sauce")
             );
             LOGGER.info("Se inicia sesion");
-        }catch (Exception e){
+        } catch (Exception e) {
             LOGGER.info("Fallo al iniciar la sesion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
@@ -43,8 +45,8 @@ public class LogoutStepDefinition extends AndroidDriver {
         }
     }
 
-    @When("realizamos el cierre de sesion")
-    public void realizamosElCierreDeSesion() {
+    @And("realizo el cierre de sesion")
+    public void realizoElCierreDeSesion() {
         try {
             ACTOR.attemptsTo(
                     cierreSesion()
@@ -59,8 +61,8 @@ public class LogoutStepDefinition extends AndroidDriver {
         }
     }
 
-    @Then("debemos volver al menu de inicio de sesion")
-    public void debemosVolverAlMenuDeInicioDeSesion() {
+    @Then("deberia volver al menu de inicio de sesion")
+    public void deberiaVolverAlMenuDeInicioDeSesion() {
         try {
             ACTOR.should(
                     seeThat(mensajeLogout(), containsString("LOGIN"))

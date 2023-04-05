@@ -15,8 +15,8 @@ public class LoginStepDefinition extends AndroidDriver {
 
     private static Logger LOGGER = Logger.getLogger(LoginStepDefinition.class);
 
-    @Given("que accedemos a la aplicacion swaglabs")
-    public void queAccedemosALaAplicacionSwaglabs() {
+    @Given("que accedo a la aplicacion swaglabs")
+    public void queAccedoALaAplicacionSwaglabs() {
         try {
             configurarCelular();
             LOGGER.info("Inicia la automatizacion");
@@ -27,9 +27,8 @@ public class LoginStepDefinition extends AndroidDriver {
             quitarDriver();
         }
     }
-
-    @When("Ingresamos los datos de usuario y contraseña")
-    public void ingresamosLosDatosDeUsuarioYContraseña() {
+    @When("Ingreso los datos de usuario y contraseña")
+    public void ingresoLosDatosDeUsuarioYContrasena()  {
         try {
             ACTOR.attemptsTo(
                     iniciarSesion().credenciales("standard_user", "secret_sauce")
@@ -43,8 +42,8 @@ public class LoginStepDefinition extends AndroidDriver {
         }
     }
 
-    @Then("observamos que el inicio de sesion se realiza correctamente")
-    public void observamosQueElInicioDeSesionSeRealizaCorrectamente() {
+    @Then("el inicio de sesion se deberia realizar correctamente")
+    public void elInicioDeSesionSeDeberiaRealizarCorrectamente() {
         try {
             ACTOR.should(
                     seeThat(mensajeInicio(), containsString("PRODUCTS"))

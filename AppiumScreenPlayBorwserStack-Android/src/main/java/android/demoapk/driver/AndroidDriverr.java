@@ -24,16 +24,16 @@ public class AndroidDriverr {
             caps.setCapability("browserstack.user", browserstackUser);
             caps.setCapability("browserstack.key", browserstackKey);
 
-            caps.setCapability("app", "bs://89871fbd03d14b0c682030fa80111ca9304e17c2");
+            caps.setCapability("app", "bs://bc19675c0822e02286e281e0807dcec5969ae5d9");
 
             // Specify device and os_version for testing
-            caps.setCapability("device", "Google Pixel 4");
-            caps.setCapability("os_version", "10");
+            caps.setCapability("device", "Samsung Galaxy S23 Ultra");
+            caps.setCapability("android_version", "13.0");
 
             // Set other BrowserStack capabilities
-            caps.setCapability("project", "AndroidDemo");
+            caps.setCapability("project", "AppiumScreenPlayBrowserStackAndroid");
             caps.setCapability("build", "Android SauceLab build");
-            caps.setCapability("name", "Login test Android");
+            caps.setCapability("name", "Flujo de compra test Android");
 
             driver =  new io.appium.java_client.android.AndroidDriver<AndroidElement>(new URL("http://hub-cloud.browserstack.com/wd/hub"), caps);
 

@@ -1,0 +1,21 @@
+
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+w
+G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b\4\b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
+w
+G.idea/sonarlint/issuestore/5/7/57e5269c3e488d3655c9ac7c1e94e9fdd1d2795e,1\b\1b1cde54284f2893162ddf673d54d2cff05f1c7b
+Å
+Q.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,1\0\10a03f31c4dce92cb371e761ce9429428bb6c176
+Å
+Q.idea/sonarlint/securityhotspotstore/5/7/57e5269c3e488d3655c9ac7c1e94e9fdd1d2795e,3\6\363fd6e130a4d621ea360125930cb201e0554c62
+ì
+cAppiumScreenPlayBorwserStack-Android/src/test/java/android/com/sofkau/runner/FlujoDeCompraTest.java,d\0\d0b6e2dd9de49002aff9241a3ebe9b473aa71f8c
+ë
+aAppiumScreenPlayBorwserStack-Android/src/main/java/android/com/sofkau/task/IniciarSesionTask.java,3\1\317ebad57f20d4893bde42a9e3e52a4265bad7a1
+Ü
+VAppiumScreenPlayBorwserStack-Android/src/test/java/android/com/sofkau/setup/SetUp.java,a\1\a19d78ab7b2260850481e222fb2790df0a1a7107
+ë
+aAppiumScreenPlayBorwserStack-Android/src/main/java/android/com/sofkau/task/ClickCheckOutTask.java,3\d\3d550febfaa9d435c505884681ed68b4fc5643ec
+à
+XAppiumScreenPlayBorwserStack-Android/src/main/java/android/com/sofkau/task/PagoTask.java,3\d\3d49dd4b869c39409b2738f16efb75d4cc23cfdb

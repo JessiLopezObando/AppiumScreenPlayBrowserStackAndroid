@@ -15,4 +15,9 @@ public class ProductsScreen extends PageObject {
     public static final Target CART_ICON = Target.the("cart icon")
             .located(By.xpath("//android.view.ViewGroup[@content-desc=\"test-Cart\"]/android.view.ViewGroup/android.widget.ImageView"));
 
+    public static final Target DISPLAY_OPTIONS_MENU = Target.the("display options")
+            .located(By.xpath("//android.view.ViewGroup[@content-desc='test-Menu']/android.view.ViewGroup/android.widget.ImageView"));
+
+
+
 }

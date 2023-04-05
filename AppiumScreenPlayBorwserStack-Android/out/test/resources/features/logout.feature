@@ -6,4 +6,4 @@ Feature: Logout
   Scenario: Logout app
     Given el usuario inicia sesion exitosamente en la app
     When el usuario solicita cerrar sesion
-    Then
+    Then el usuario observa la pantalla de inicio de sesion

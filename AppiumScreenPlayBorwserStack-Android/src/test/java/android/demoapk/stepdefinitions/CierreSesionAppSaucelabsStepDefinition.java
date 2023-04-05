@@ -2,6 +2,7 @@ package android.demoapk.stepdefinitions;
 
 
 import android.demoapk.driver.AndroidDriverr;
+import android.demoapk.question.MensajeConfirmacionCierreSesion;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,6 +18,9 @@ import static android.demoapk.task.ElegirArticuloTask.selecionaProductoTask;
 import static android.demoapk.task.LoginUsuarioTask.loginUsuarioTask;
 import static android.demoapk.task.RegistroDatosUsuarioPago.registrarCompra;
 import static android.demoapk.task.TerminarCompraTask.terminarCompraTask;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.core.StringContains.containsString;
+
 public class CierreSesionAppSaucelabsStepDefinition {
     public static Logger LOGGER = Logger.getLogger(CierreSesionAppSaucelabsStepDefinition.class);
     protected Actor actor = Actor.named("Usuario de la app");
@@ -84,16 +88,13 @@ public class CierreSesionAppSaucelabsStepDefinition {
     }
     @Then("El usuario deberia volver al inicio de la app")
     public void el_usuario_deberia_volver_al_inicio_de_la_app() {
-
-    }
-    }
-/*
-  try {
+        try {
             actor.should(
-                    seeThat(MensajeConfirmacionCompra.isEqualTo(), containsString(String.format("THANK YOU FOR YOU ORDER"))));
+                    seeThat(MensajeConfirmacionCierreSesion.isEqualTo(), containsString(String.format(""))));
             LOGGER.info("El flujo de compra fue exito ");
         } catch (Exception e) {
             LOGGER.info("Fallo al realizar la assercion");
-           Assertions.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
- */
+    }
+    }

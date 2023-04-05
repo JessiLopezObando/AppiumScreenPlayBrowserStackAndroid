@@ -24,7 +24,7 @@ public class AndroidDriverr {
             caps.setCapability("browserstack.user", browserstackUser);
             caps.setCapability("browserstack.key", browserstackKey);
 
-            caps.setCapability("app", "bs://bc19675c0822e02286e281e0807dcec5969ae5d9");
+            caps.setCapability("app", "bs://d90abdfc84e1b63d8e99c8353224ecbd908111ba");
 
             // Specify device and os_version for testing
             caps.setCapability("device", "Samsung Galaxy S23 Ultra");

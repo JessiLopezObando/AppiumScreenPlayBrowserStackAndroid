@@ -1,23 +1,21 @@
 package android.com.sofkau.stepdefinitions;
 
 import android.com.sofkau.driver.AndroidDriverr;
+import android.com.sofkau.question.CerrarSesionQuestion;
 import android.com.sofkau.task.CerrarSesionTask;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static android.com.sofkau.task.IniciarSesionTask.iniciarSesionTask;
-import static android.com.sofkau.ui.CerrarSesionUI.LOGO_ASERCION;
-import static android.com.sofkau.ui.CerrarSesionUI.MENSAJE_ASERCION_CERRAR_SESION;
-import static android.com.sofkau.ui.FlujoDeCompraUI.MENSAJE_ASERCION;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.containsString;
+
+
 
 public class CerrarSesionStepDefinition {
     private final Logger log = LoggerFactory.getLogger(CerrarSesionStepDefinition.class);
@@ -55,19 +53,20 @@ public class CerrarSesionStepDefinition {
     }
     @Then("la app me deberia redireccionar nuevamente a la pantalla de inicio de sesion")
     public void laAppMeDeberiaRedireccionarNuevamenteALaPantallaDeInicioDeSesion() {
+
         try {
             actor.should(
-                    seeThat(the(MENSAJE_ASERCION_CERRAR_SESION), isVisible())
+                    GivenWhenThen.seeThat(CerrarSesionQuestion.isEqualTo(),containsString(String.format("The currently accepted usernames for this application are (tap to autofill):")))
             );
-            actor.should(
-                    seeThat(the(LOGO_ASERCION), isVisible())
-            );
-            String expectedMessage = "The currently accepted usernames for this application are (tap to autofill):";
-            String actualMessage = MENSAJE_ASERCION.resolveFor(actor).getText();
-            assertThat(actualMessage).isEqualTo(expectedMessage);
+            log.info("Se verifico la comparacion del texto");
+
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            log.error("Error en las aserciones");
+            log.error(e.getMessage());
+            throw e;
         }
+
     }
+
 
 }

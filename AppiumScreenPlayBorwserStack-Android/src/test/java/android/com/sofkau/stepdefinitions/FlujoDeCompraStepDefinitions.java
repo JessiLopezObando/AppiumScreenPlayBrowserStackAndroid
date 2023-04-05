@@ -10,7 +10,6 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.MalformedURLException;
 
 import static android.com.sofkau.task.IniciarSesionTask.iniciarSesionTask;
 import static android.com.sofkau.ui.FlujoDeCompraUI.MENSAJE_ASERCION;

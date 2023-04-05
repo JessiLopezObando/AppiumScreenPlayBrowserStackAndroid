@@ -13,3 +13,4 @@
       When User introduce the valid credentials standard_user secret_sauce
       And User selects the product
       Then User should see payment information
+

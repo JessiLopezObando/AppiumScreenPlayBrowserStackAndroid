@@ -16,18 +16,19 @@ public class AndroidDriverr {
 
         String browserstackUser = dotenv.get("BROWSERSTACK_USER");
         String browserstackKey = dotenv.get("BROWSERSTACK_KEY");
+        String browserstackApp = dotenv.get("BROWSERSTACK_APP");
 
         try {
             DesiredCapabilities caps = new DesiredCapabilities();
 
             // Set your access credentials
-            caps.setCapability("browserstack.user", browserstackUser);
-            caps.setCapability("browserstack.key", browserstackKey);
+            caps.setCapability("browserstack.user", "nevardoospina_YSokFx");
+            caps.setCapability("browserstack.key", "XenBfV7uywaCAFbnujUm");
 
-            caps.setCapability("app", "bs://89871fbd03d14b0c682030fa80111ca9304e17c2");
+            caps.setCapability("app", "bs://99e68ca3d5a876eb60e34edd4fd7e86f2d2e7d25");
 
             // Specify device and os_version for testing
-            caps.setCapability("device", "Google Pixel 4");
+            caps.setCapability("device", "Xiaomi Redmi Note 9");
             caps.setCapability("os_version", "10");
 
             // Set other BrowserStack capabilities

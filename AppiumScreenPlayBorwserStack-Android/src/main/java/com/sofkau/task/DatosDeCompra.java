@@ -5,15 +5,22 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import static com.sofkau.ui.CompraOverview.*;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 
 public class DatosDeCompra implements Task {
     private String nombre;
     private String apellido;
     private String postal;
+
+    public DatosDeCompra(String nombre, String apellido, String postal) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.postal = postal;
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.attemptsTo(
                 Enter.theValue(nombre).into(NOMBRE),
                 Enter.theValue(apellido).into(APELLIDO),
@@ -23,11 +30,6 @@ public class DatosDeCompra implements Task {
     }
 
     public static DatosDeCompra datosDeCompra(String nombre, String apellido, String postal) {
-        return new DatosDeCompra(nombre, apellido, postal);
-    }
-    public DatosDeCompra (String nombre, String apellido, String postal) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.postal = postal;
+        return instrumented(DatosDeCompra.class, nombre, apellido, postal);
     }
 }

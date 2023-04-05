@@ -15,7 +15,9 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.containsString;
 
 public class CompraStepDefinition extends AndroidDriver {
-    private static Logger LOGGER = Logger.getLogger(CompraStepDefinition.class);
+    private static final Logger LOGGER = Logger.getLogger(CompraStepDefinition.class);
+    private final String username = System.getenv("MY_APP_USERNAME");
+    private final String password = System.getenv("MY_APP_PASSWORD");
 
     @Given("que inicio en la aplicacion swaglabs")
     public void queInicioEnLaAplicacionSwaglabs() {
@@ -34,10 +36,10 @@ public class CompraStepDefinition extends AndroidDriver {
     public void inicioSesionEnLaAppConCredencialesValidas() {
         try {
             ACTOR.attemptsTo(
-                    iniciarSesion().credenciales(System.getenv("MY_APP_USERNAME"), System.getenv("MY_APP_PASSWORD"))
+                    iniciarSesion().credenciales(username, password)
             );
             LOGGER.info("Se inicia sesion");
-        }catch (Exception e){
+        } catch (Exception e) {
             LOGGER.info("Fallo al iniciar la sesion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
@@ -47,10 +49,13 @@ public class CompraStepDefinition extends AndroidDriver {
 
     @When("agrego un producto al carrito y realizo la compra")
     public void agregoUnProductoAlCarritoYRealizoLaCompra() {
+        String nombre = "nombre";
+        String apellido = "apellido";
+        String postal = "postal";
         try {
             ACTOR.attemptsTo(
                     escogerProductos(),
-                    datosDeCompra("nombre", "apellido", "postal"),
+                    datosDeCompra(nombre, apellido, postal),
                     realizarCompra().conElDriver(driver)
             );
             LOGGER.info("Se realiza una compra");
@@ -59,9 +64,9 @@ public class CompraStepDefinition extends AndroidDriver {
             LOGGER.warn(e.getMessage());
             Assertions.fail();
             quitarDriver();
-
         }
     }
+
     @Then("deberia ver un mensaje de compra exitosa")
     public void deberiaVerUnMensajeDeCompraExitosa() {
         try {
@@ -77,3 +82,4 @@ public class CompraStepDefinition extends AndroidDriver {
         }
     }
 }
+

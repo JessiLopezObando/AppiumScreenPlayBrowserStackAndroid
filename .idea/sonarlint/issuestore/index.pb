@@ -7,8 +7,6 @@ YAppiumScreenPlayBorwserStack-Android/src/main/java/com/sofkau/question/MensajeC
 YAppiumScreenPlayBorwserStack-Android/src/main/java/com/sofkau/question/MensajeInicio.java,1\7\177ab9629111f85f726a3cc42931f85e46bc19d4
 ‰
 YAppiumScreenPlayBorwserStack-Android/src/main/java/com/sofkau/question/MensajeLogout.java,5\3\53aeb826dcb5aa477cc577f03953fd9fe62181fd
-„
-TAppiumScreenPlayBorwserStack-Android/src/main/java/com/sofkau/task/CierreSesion.java,9\e\9eca523d6ed000c93d8b73c4e61ca7a4169f4126
 ˆ
 XAppiumScreenPlayBorwserStack-Android/src/main/java/com/sofkau/task/EscogerProductos.java,4\f\4fa564dab11f0da1586a3d0040aec50476d56973
 „

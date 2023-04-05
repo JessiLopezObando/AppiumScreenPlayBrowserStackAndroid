@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
-
 import static com.sofkau.question.MensajeLogout.mensajeLogout;
 import static com.sofkau.task.CierreSesion.cierreSesion;
 import static com.sofkau.task.IniciarSesion.iniciarSesion;
@@ -16,6 +15,9 @@ import static org.hamcrest.Matchers.containsString;
 
 public class LogoutStepDefinition extends AndroidDriver {
     private static Logger LOGGER = Logger.getLogger(LogoutStepDefinition.class);
+
+    private final String username = System.getenv("MY_APP_USERNAME");
+    private final String password = System.getenv("MY_APP_PASSWORD");
 
     @Given("que ingreso a la aplicacion swaglabs")
     public void queIngresoALaAplicacionSwaglabs() {
@@ -33,7 +35,7 @@ public class LogoutStepDefinition extends AndroidDriver {
     public void inicioSesionEnLaAplicacion() {
         try {
             ACTOR.attemptsTo(
-                    iniciarSesion().credenciales(System.getenv("MY_APP_USERNAME"), System.getenv("MY_APP_PASSWORD"))
+                    iniciarSesion().credenciales(username,password)
             );
             LOGGER.info("Se inicia sesion");
         } catch (Exception e) {

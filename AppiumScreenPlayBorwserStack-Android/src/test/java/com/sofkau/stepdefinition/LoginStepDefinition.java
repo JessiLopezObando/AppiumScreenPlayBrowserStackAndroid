@@ -12,8 +12,9 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.containsString;
 
 public class LoginStepDefinition extends AndroidDriver {
-
-    private static Logger LOGGER = Logger.getLogger(LoginStepDefinition.class);
+    private static final Logger LOGGER = Logger.getLogger(LoginStepDefinition.class);
+    private final String username = System.getenv("MY_APP_USERNAME");
+    private final String password = System.getenv("MY_APP_PASSWORD");
 
     @Given("que accedo a la aplicacion swaglabs")
     public void queAccedoALaAplicacionSwaglabs() {
@@ -31,7 +32,7 @@ public class LoginStepDefinition extends AndroidDriver {
     public void ingresoLosDatosDeUsuarioYContrasena()  {
         try {
             ACTOR.attemptsTo(
-                    iniciarSesion().credenciales(System.getenv("MY_APP_USERNAME"), System.getenv("MY_APP_PASSWORD"))
+                    iniciarSesion().credenciales(username,password)
             );
             LOGGER.info("Se inicia sesion");
         } catch (Exception e) {

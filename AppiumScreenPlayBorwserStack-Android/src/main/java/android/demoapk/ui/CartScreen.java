@@ -6,5 +6,5 @@ import static org.openqa.selenium.By.xpath;
 
 public class CartScreen {
     public static final Target CHECKOUT_BTTN = Target.the("Checkout button")
-            .located(xpath("//android.view.ViewGroup[@content-desc='test-CHECKOUT']"));
+            .located(xpath("//*[@content-desc='test-CHECKOUT']"));
 }

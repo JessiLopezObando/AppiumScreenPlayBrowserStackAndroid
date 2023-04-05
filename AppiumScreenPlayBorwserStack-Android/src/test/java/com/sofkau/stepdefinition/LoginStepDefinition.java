@@ -1,6 +1,7 @@
 package com.sofkau.stepdefinition;
 
 import com.sofkau.AndroidDriver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,7 +16,7 @@ import static org.hamcrest.Matchers.containsString;
 
 public class LoginStepDefinition extends AndroidDriver {
 
-    private static Logger LOGGER= Logger.getLogger(LoginStepDefinition.class);
+    private static Logger LOGGER = Logger.getLogger(LoginStepDefinition.class);
 
     Actor ACTOR = Actor.named("James");
 
@@ -30,14 +31,15 @@ public class LoginStepDefinition extends AndroidDriver {
             Assertions.fail();
         }
     }
+
     @When("Ingresamos los datos de usuario y contraseña")
     public void ingresamosLosDatosDeUsuarioYContraseña() {
         try {
             ACTOR.attemptsTo(
-                    iniciarSesion().credenciales("standard_user","secret_sauce")
+                    iniciarSesion().credenciales("standard_user", "secret_sauce")
             );
             LOGGER.info("Se inicia sesion");
-        }catch (Exception e){
+        } catch (Exception e) {
             LOGGER.info("Fallo el entrar en la opcion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
@@ -49,7 +51,7 @@ public class LoginStepDefinition extends AndroidDriver {
     public void obtemosUnMensajeDeInicioDeSesionExitoso() {
         try {
             ACTOR.should(
-                    seeThat(mensajeInicio(),containsString("PRODUCTS"))
+                    seeThat(mensajeInicio(), containsString("PRODUCTS"))
             );
             LOGGER.info("Hace la comparacion");
         } catch (Exception e) {

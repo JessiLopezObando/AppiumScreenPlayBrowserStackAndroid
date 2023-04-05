@@ -22,16 +22,27 @@ public class CompraStepDefinition extends AndroidDriver {
 
     Actor ACTOR = Actor.named("James");
 
-    @Given("que accedemos a la aplicacion swaglabs e iniciamos sesion")
-    public void queAccedemosALaAplicacionSwaglabsEIniciamosSesion() {
+    @Given("que iniciamos a la aplicacion swaglabs")
+    public void queIniciamosALaAplicacionSwaglabs() {
         try {
             ACTOR.can(BrowseTheWeb.with(AndroidDriver.configureDriver().start()));
             LOGGER.info("Inicia la automatizacion");
-            ACTOR.wasAbleTo(
-                    iniciarSesion().credenciales("standard_user", "secret_sauce")
-            );
         } catch (Exception e) {
             LOGGER.info("Fallo la configuracion");
+            LOGGER.warn(e.getMessage());
+            Assertions.fail();
+        }
+    }
+
+    @When("iniciamos sesion en la app con credenciales validas")
+    public void iniciamosSesionEnLaAppConCredencialesValidas() {
+        try {
+            ACTOR.attemptsTo(
+                    iniciarSesion().credenciales("standard_user","secret_sauce")
+            );
+            LOGGER.info("Se inicia sesion");
+        }catch (Exception e){
+            LOGGER.info("Fallo el entrar en la opcion");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
 

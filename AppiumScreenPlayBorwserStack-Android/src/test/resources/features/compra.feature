@@ -4,6 +4,7 @@ Feature: Compra de un producto en swaglabs
   para hacer uso del producto
 
   Scenario: inicio de sesion exitoso
-    Given que accedemos a la aplicacion swaglabs e iniciamos sesion
-    When agrego un producto al carro y realizo la compra
+    Given que iniciamos a la aplicacion swaglabs
+    When iniciamos sesion en la app con credenciales validas
+    And agrego un producto al carro y realizo la compra
     Then deberia ver un mensaje de compra exitosa

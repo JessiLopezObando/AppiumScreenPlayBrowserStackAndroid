@@ -22,7 +22,6 @@ public class TerminarCompraTask implements Task {
             );
         }
 
-
             }
             public static TerminarCompraTask terminarCompraTask () {
             return new TerminarCompraTask();}

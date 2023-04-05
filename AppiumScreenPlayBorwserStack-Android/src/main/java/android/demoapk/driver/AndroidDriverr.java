@@ -22,10 +22,10 @@ public class AndroidDriverr {
             DesiredCapabilities caps = new DesiredCapabilities();
 
             // Set your access credentials
-            caps.setCapability("browserstack.user", "nevardoantonioos_ongVI5");
-            caps.setCapability("browserstack.key", "scXc4GpRzqfKpuvp7gFM");
+            caps.setCapability("browserstack.user", "nevardoospina_YSokFx");
+            caps.setCapability("browserstack.key", "XenBfV7uywaCAFbnujUm");
 
-            caps.setCapability("app", "bs://ba18e2d2180283e4a4737d211db3456d1357f3b4");
+            caps.setCapability("app", "bs://99e68ca3d5a876eb60e34edd4fd7e86f2d2e7d25");
 
             // Specify device and os_version for testing
             caps.setCapability("device", "Xiaomi Redmi Note 9");

@@ -2,6 +2,7 @@ package android.demoapk.stepdefinitions;
 
 import android.demoapk.driver.AndroidDriverr;
 import android.demoapk.question.Msj_Compra;
+import android.demoapk.question.Msj_Logout;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -72,7 +73,7 @@ public class LogoutEstepDefinitions {
     public void usuarioVuelveAlInicioSesion() {
         try {
             actor.should(
-                    seeThat(Msj_Compra.isEqualTo(), containsString(String.format("test-LOGIN")))
+                    seeThat(Msj_Logout.isEqualTo(), containsString(String.format("")))
             );
 
             LOGGER.info("Prueba realizada con exito ");

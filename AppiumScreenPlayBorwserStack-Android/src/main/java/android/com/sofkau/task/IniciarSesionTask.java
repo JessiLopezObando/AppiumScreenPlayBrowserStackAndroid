@@ -1,4 +1,4 @@
-package android.demoapk.task;
+package android.com.sofkau.task;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import net.serenitybdd.screenplay.Actor;
@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static android.demoapk.ui.FlujoDeCompraUI.*;
+import static android.com.sofkau.ui.FlujoDeCompraUI.*;
 
 public class IniciarSesionTask implements Task {
     @Override

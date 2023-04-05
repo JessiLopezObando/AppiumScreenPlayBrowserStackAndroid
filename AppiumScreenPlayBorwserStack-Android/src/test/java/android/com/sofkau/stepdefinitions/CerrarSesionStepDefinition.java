@@ -1,6 +1,7 @@
-package android.demoapk.stepdefinitions;
+package android.com.sofkau.stepdefinitions;
 
-import android.demoapk.driver.AndroidDriverr;
+import android.com.sofkau.driver.AndroidDriverr;
+import android.com.sofkau.task.CerrarSesionTask;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,12 +10,10 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static android.demoapk.task.CerrarSesionTask.cerrarSesionTask;
-import static android.demoapk.task.IniciarSesionTask.iniciarSesionTask;
-import static android.demoapk.ui.CerrarSesionUI.LOGO_ASERCION;
-import static android.demoapk.ui.CerrarSesionUI.MENSAJE_ASERCION_CERRAR_SESION;
-import static android.demoapk.ui.FlujoDeCompraUI.MENSAJE_ASERCION;
-import static android.demoapk.ui.FlujoDeCompraUI.OBJETO_ASERCION;
+import static android.com.sofkau.task.IniciarSesionTask.iniciarSesionTask;
+import static android.com.sofkau.ui.CerrarSesionUI.LOGO_ASERCION;
+import static android.com.sofkau.ui.CerrarSesionUI.MENSAJE_ASERCION_CERRAR_SESION;
+import static android.com.sofkau.ui.FlujoDeCompraUI.MENSAJE_ASERCION;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
@@ -45,7 +44,7 @@ public class CerrarSesionStepDefinition {
         try {
             log.info("Cerrar Sesion");
             actor.attemptsTo(
-                    cerrarSesionTask()
+                    CerrarSesionTask.cerrarSesionTask()
             );
         } catch (Exception e) {
             log.error("problema al tratar de cerrar sesion");

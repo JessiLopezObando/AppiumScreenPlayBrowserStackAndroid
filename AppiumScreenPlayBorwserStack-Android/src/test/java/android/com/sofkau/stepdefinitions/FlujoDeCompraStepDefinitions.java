@@ -1,6 +1,7 @@
-package android.demoapk.stepdefinitions;
+package android.com.sofkau.stepdefinitions;
 
-import android.demoapk.driver.AndroidDriverr;
+import android.com.sofkau.driver.AndroidDriverr;
+import android.com.sofkau.task.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,15 +12,9 @@ import org.slf4j.LoggerFactory;
 
 import java.net.MalformedURLException;
 
-import static android.demoapk.task.AgregarAlCarritoTask.agregarAlCarritoTask;
-import static android.demoapk.task.ClickBotonContinuar.clickBotonContinuar;
-import static android.demoapk.task.ClickCheckOutTask.clickCheckOutTask;
-import static android.demoapk.task.IniciarSesionTask.iniciarSesionTask;
-import static android.demoapk.task.LlenarFormularioTask.llenarFormularioTask;
-import static android.demoapk.task.PagoTask.pagoTask;
-import static android.demoapk.task.SeleccionarProductosTask.seleccionarProductosTask;
-import static android.demoapk.ui.FlujoDeCompraUI.MENSAJE_ASERCION;
-import static android.demoapk.ui.FlujoDeCompraUI.OBJETO_ASERCION;
+import static android.com.sofkau.task.IniciarSesionTask.iniciarSesionTask;
+import static android.com.sofkau.ui.FlujoDeCompraUI.MENSAJE_ASERCION;
+import static android.com.sofkau.ui.FlujoDeCompraUI.OBJETO_ASERCION;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
@@ -29,7 +24,7 @@ public class FlujoDeCompraStepDefinitions {
     private final Logger log = LoggerFactory.getLogger(FlujoDeCompraStepDefinitions.class);
     Actor actor = Actor.named("Bryan");
     @Given("Que el usuario ingresa a la aplicacion de compras del telefono android")
-    public void queElUsuarioIngresaALaAplicacionDeComprasDelTelefonoAndroid() throws MalformedURLException {
+    public void queElUsuarioIngresaALaAplicacionDeComprasDelTelefonoAndroid() {
         try {
             log.info("Inicio de la automatizacion");
             actor.can(BrowseTheWeb
@@ -42,8 +37,8 @@ public class FlujoDeCompraStepDefinitions {
         }
     }
 
-    @When("Introduce sus credenciales validas de usuario {string} y contrasenna {string}")
-    public void introduceSusCredencialesValidasDeUsuarioYContrasenna(String string, String string2) {
+    @When("Introduce sus credenciales validas de usuario y contrasenna")
+    public void introduceSusCredencialesValidasDeUsuarioYContrasenna() {
         try{
             log.info("Se Inicia Sesion con credenciales validas");
             actor.attemptsTo(
@@ -60,12 +55,12 @@ public class FlujoDeCompraStepDefinitions {
         try {
             log.info("Seleccionar productos y comprarlos");
             actor.attemptsTo(
-                    seleccionarProductosTask(),
-                    agregarAlCarritoTask(),
-                    clickCheckOutTask(),
-                    llenarFormularioTask().nombre("Bryan").apellido("Polo").zipCode("051040"),
-                    clickBotonContinuar(),
-                    pagoTask()
+                    SeleccionarProductosTask.seleccionarProductosTask(),
+                    AgregarAlCarritoTask.agregarAlCarritoTask(),
+                    ClickCheckOutTask.clickCheckOutTask(),
+                    LlenarFormularioTask.llenarFormularioTask().nombre("Bryan").apellido("Polo").zipCode("051040"),
+                    ClickBotonContinuar.clickBotonContinuar(),
+                    PagoTask.pagoTask()
             );
         } catch (Exception e) {
             log.error("Problema al agregar o comprar productos");

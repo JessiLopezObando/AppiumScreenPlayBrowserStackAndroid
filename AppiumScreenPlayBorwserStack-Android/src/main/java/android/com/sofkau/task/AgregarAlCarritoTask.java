@@ -1,10 +1,10 @@
-package android.demoapk.task;
+package android.com.sofkau.task;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
 
-import static android.demoapk.ui.FlujoDeCompraUI.*;
+import static android.com.sofkau.ui.FlujoDeCompraUI.*;
 
 
 public class AgregarAlCarritoTask implements Task {

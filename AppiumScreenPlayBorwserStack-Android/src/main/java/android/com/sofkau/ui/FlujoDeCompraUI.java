@@ -1,4 +1,4 @@
-package android.demoapk.ui;
+package android.com.sofkau.ui;
 
 import net.serenitybdd.screenplay.targets.Target;
 

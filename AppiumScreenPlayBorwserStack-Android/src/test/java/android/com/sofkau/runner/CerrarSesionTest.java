@@ -1,4 +1,4 @@
-package android.demoapk.runner;
+package android.com.sofkau.runner;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/FlujoDeCompra.feature",
-        glue = "android.demoapk.stepdefinitions",
+        features = "src/test/resources/features/CerrarSesion.feature",
+        glue = "android.com.sofkau.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@FlujoDeCompra"
+        tags = "@CerrarSesion"
 )
-public class FlujoDeCompraTest {
+public class CerrarSesionTest {
 }

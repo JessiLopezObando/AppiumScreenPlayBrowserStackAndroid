@@ -1,4 +1,4 @@
-package android.demoapk.setup;
+package android.com.sofkau.setup;
 
 import net.serenitybdd.screenplay.Actor;
 import net.thucydides.core.annotations.Managed;

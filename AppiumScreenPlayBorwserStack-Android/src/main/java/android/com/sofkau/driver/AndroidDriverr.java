@@ -1,4 +1,4 @@
-package android.demoapk.driver;
+package android.com.sofkau.driver;
 
 import io.appium.java_client.android.AndroidElement;
 import io.github.cdimascio.dotenv.Dotenv;

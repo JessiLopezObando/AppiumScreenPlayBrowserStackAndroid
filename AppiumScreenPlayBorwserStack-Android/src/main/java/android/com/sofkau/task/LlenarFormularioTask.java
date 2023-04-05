@@ -1,12 +1,12 @@
-package android.demoapk.task;
+package android.com.sofkau.task;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static android.demoapk.ui.FlujoDeCompraUI.*;
-import static android.demoapk.ui.FlujoDeCompraUI.CAMPO_CODIGO_POSTAL;
+import static android.com.sofkau.ui.FlujoDeCompraUI.*;
+import static android.com.sofkau.ui.FlujoDeCompraUI.CAMPO_CODIGO_POSTAL;
 
 public class LlenarFormularioTask implements Task {
     private String nombre;

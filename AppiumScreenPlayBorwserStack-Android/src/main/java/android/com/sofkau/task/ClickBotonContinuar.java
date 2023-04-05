@@ -1,13 +1,12 @@
-package android.demoapk.task;
+package android.com.sofkau.task;
 
 import io.appium.java_client.MobileBy;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static android.demoapk.driver.AndroidDriverr.driver;
-import static android.demoapk.ui.FlujoDeCompraUI.BOTON_CONTINUAR;
-import static android.demoapk.ui.FlujoDeCompraUI.BOTON_FINISH;
+import static android.com.sofkau.driver.AndroidDriverr.driver;
+import static android.com.sofkau.ui.FlujoDeCompraUI.BOTON_CONTINUAR;
 
 public class ClickBotonContinuar implements Task {
 
